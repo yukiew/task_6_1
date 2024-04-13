@@ -39,9 +39,7 @@ jobs:
 
 
       - name: Lint
-        run: $(go env GOPATH)/bin/golint ./...
-        env:
-          PATH: ${{ github.workspace }}/go/bin:$PATH
+        run: ${{ github.workspace }}/go/bin/golint ./...
 
       - name: Run Unit Tests
         if: "!contains(github.event.head_commit.message, '[skip tests]')"
