@@ -31,8 +31,14 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, world!
 
+      - name: Install golint
+        run: go install golang.org/x/lint/golint@latest
+
+
       - name: Lint
-        run: go get -u golang.org/x/lint/golint && golint ./...
+        run: golint ./...
+        env:
+          PATH: ${{ github.workspace }}/go/bin:$PATH
 
       - name: Run Unit Tests
         if: "!contains(github.event.head_commit.message, '[skip tests]')"
