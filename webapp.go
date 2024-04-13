@@ -48,4 +48,11 @@ func addHandler(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
+
+	func max(a, b int) int {
+    if a > b {
+        return a
+    }
+    return b
+  }
 }
