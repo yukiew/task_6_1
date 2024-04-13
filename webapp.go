@@ -17,7 +17,7 @@ type ResponseData struct {
 	Sum int `json:"sum"` // 和
 }
 
-func main() {
+func webapp() {
 	http.HandleFunc("/add", addHandler) // 设置处理函数
 	log.Println("Server starting on port 8080...")
 	log.Fatal(http.ListenAndServe(":8080", nil)) // 启动服务器
@@ -48,11 +48,4 @@ func addHandler(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
-}
-
-func max(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
 }
