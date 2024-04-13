@@ -1,4 +1,4 @@
-package webapp
+package main
 
 import (
 	"encoding/json"
@@ -17,7 +17,7 @@ type ResponseData struct {
 	Sum int `json:"sum"` // 和
 }
 
-func webapp() {
+func main() {
 	http.HandleFunc("/add", addHandler) // 设置处理函数
 	log.Println("Server starting on port 8080...")
 	log.Fatal(http.ListenAndServe(":8080", nil)) // 启动服务器
