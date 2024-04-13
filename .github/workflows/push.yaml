@@ -39,7 +39,7 @@ jobs:
 
 
       - name: Lint
-        run: golint ./...
+        run: $(go env GOPATH)/bin/golint ./...
         env:
           PATH: ${{ github.workspace }}/go/bin:$PATH
 
