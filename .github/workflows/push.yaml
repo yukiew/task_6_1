@@ -30,6 +30,9 @@ jobs:
         with:
           go-version: '1.21' # 指定使用Go版本為1.21
 
+      - name: test
+        run: ls -la
+        
       - name: Run golangci-lint # 運行golangci-lint工具來進行Go代碼的靜態檢查
         uses: golangci/golangci-lint-action@v3
         # golangci-lint didn't merge below PR yet
