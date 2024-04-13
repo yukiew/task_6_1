@@ -35,7 +35,8 @@ jobs:
         run: go install golang.org/x/lint/golint@latest
 
       - name: which golint
-        run: which golint
+        run: echo $(go env GOPATH)/bin
+
 
       - name: Lint
         run: golint ./...
